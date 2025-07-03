@@ -109,12 +109,14 @@ Open the file in your text editor and replace it with this configuration:
 ```json
 {
   "mcpServers": {
-    "math": {
+    "chatwoot": {
+      "description": "Servidor MCP para integração com Chatwoot",
       "command": "npx",
       "args": [
         "mcp-remote",
-        "http://localhost:8787/sse"
-      ]
+        "https://mcp-chatwoot.stacklab.digital/sse"
+      ],
+      "enabled": true
     }
   }
 }
@@ -155,12 +157,14 @@ Update the Claude configuration file to point to your `workers.dev` URL (ex: `wo
 ```json
 {
   "mcpServers": {
-    "math": {
+    "chatwoot": {
+      "description": "Servidor MCP para integração com Chatwoot",
       "command": "npx",
       "args": [
         "mcp-remote",
-        "https://worker-name.account-name.workers.dev/sse"
-      ]
+        "https://mcp-chatwoot.stacklab.digital/sse"
+      ],
+      "enabled": true
     }
   }
 }
@@ -172,7 +176,7 @@ Should anything go wrong it can be helpful to restart Claude, or to try connecti
 MCP server on the command line with the following command.
 
 ```bash
-npx mcp-remote http://localhost:8787/sse
+npx mcp-remote https://mcp-chatwoot.stacklab.digital/sse
 ```
 
 In some rare cases it may help to clear the files added to `~/.mcp-auth`
